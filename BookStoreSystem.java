@@ -585,7 +585,7 @@ public class BookStoreSystem {
 								{
 									for(int i = index; i < counterC; i++)
 						            	{
-								            if(holdname == testname)
+								            if(holdname.equals(testname))
 								            	{
 							            		if(i == counterC -1 )
 							            		{
@@ -674,7 +674,8 @@ public class BookStoreSystem {
 								String ser1 = n2.nextLine();
 									for(int x = 0; x<counterB; x++)
 									{
-										if(ser1.equalsIgnoreCase(Author[x]) || ser1.equalsIgnoreCase(Tittle[x]))
+
+										if(Author[x].toUpperCase().contains(ser1.toUpperCase()) || Tittle[x].toUpperCase().contains(ser1.toUpperCase()))
 										{
 											System.out.println("Book Code : " + BookC[x]);
 											System.out.println("Author    : " + Author[x]);
@@ -1865,10 +1866,10 @@ public class BookStoreSystem {
 								System.out.print("Quantity  : ");
 								quantity = in.nextInt();
 
-								
+
 									if(quantity > BookQ[index])
 									{
-										System.out.println("Invalid Transaction!\nAvailable Quantity :" +BookQ[index]);										
+										System.out.println("Invalid Transaction!\nAvailable Quantity :" +BookQ[index]);
 									}
 									else
 									condi3 = false;
